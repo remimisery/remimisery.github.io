@@ -3,84 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Les projets de Rémi Misery, étudiant en science des données.">
+  <meta name="description" content="Découvrez quelques projets réalisés par Rémi Misery dans le cadre de ses études en science des données.">
   <title>Projets - Rémi Misery</title>
   <link rel="stylesheet" href="../assets/css/style.css" />
   <script src="../assets/js/navbar.js" defer></script>
-  
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
-<script>window.addEventListener('DOMContentLoaded', () => AOS.init());</script>
-
 </head>
 <body>
   <main>
-    <h2>📊 Projets</h2>
-    
-<section>
-    <h3>🔍 Filtrer par catégorie</h3>
-    <div class="filter-buttons">
-        <button onclick="filterProjects('all')">Tous</button>
-        <button onclick="filterProjects('python')">Python</button>
-        <button onclick="filterProjects('sql')">SQL</button>
-        <button onclick="filterProjects('viz')">DataViz</button>
-    </div>
-    <div class="projects-list">
-        <div class="project-card python" data-aos="zoom-in">
-            <h4>Projet Python</h4>
-            <p>Traitement de données et visualisation avec Matplotlib.</p>
-        </div>
-        <div class="project-card sql" data-aos="zoom-in">
-            <h4>Base de données MySQL</h4>
-            <p>Requêtes complexes pour analyser des jeux de données réels.</p>
-        </div>
-        <div class="project-card viz" data-aos="zoom-in">
-            <h4>Dashboard interactif</h4>
-            <p>Création de tableaux de bord avec Excel et Google Data Studio.</p>
-        </div>
-    </div>
-</section>
-<script>
-function filterProjects(category) {
-    const cards = document.querySelectorAll(".project-card");
-    cards.forEach(card => {
-        if (category === "all" || card.classList.contains(category)) {
-            card.style.display = "block";
-        } else {
-            card.style.display = "none";
-        }
-    });
-}
-</script>
-<style>
-.filter-buttons button {
-    margin: 5px;
-    padding: 8px 14px;
-    border: none;
-    border-radius: 6px;
-    background: var(--secondary);
-    color: var(--bg);
-    cursor: pointer;
-}
-.filter-buttons button:hover {
-    background: var(--accent);
-}
-.projects-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-.project-card {
-    background: var(--section-bg);
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    width: 100%;
-    max-width: 300px;
-}
-</style>
+    <h2>📊 Projets réalisés</h2>
 
+    <section>
+      <h3>🧪 Analyse exploratoire de données</h3>
+      <p>Projet mené en binôme : nettoyage, visualisation et interprétation d’un jeu de données publiques (accidents de la route en France). Utilisation de Python (Pandas, Matplotlib), présentation synthétique avec support visuel.</p>
+    </section>
+
+    <section>
+      <h3>📈 Dashboard interactif Excel</h3>
+      <p>Création d’un tableau de bord dynamique à partir d’un fichier de suivi RH. Gestion de données via tableaux croisés, formules avancées, et graphiques croisés dynamiques. Mise en forme professionnelle pour restitution client.</p>
+    </section>
+
+    <section>
+      <h3>📂 Base de données relationnelle</h3>
+      <p>Conception d’un schéma relationnel avec MySQL (modèle MCD/MLD), mise en œuvre avec DBeaver. Projet simulant un système de réservation pour un réseau de bibliothèques. Requêtes SQL complexes réalisées (jointures, agrégats).</p>
+    </section>
+
+    <section>
+      <h3>📉 Étude statistique et modélisation</h3>
+      <p>Réalisation d’une étude statistique complète avec R : analyse de corrélations, régression linéaire, validation croisée sur des données socio-économiques régionales. Rapport écrit structuré et soutenance orale.</p>
+    </section>
   </main>
+
   <footer>
     <p>&copy; 2025 Rémi Misery. Tous droits réservés.</p>
   </footer>
