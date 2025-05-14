@@ -190,11 +190,14 @@ footer {
 
 /* Hero & Profile */
 .profile-img {
-    max-width: 140px;
-    border-radius: 50%;
-    border: 3px solid var(--secondary);
-    margin-bottom: 10px;
+  max-width: 160px;
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  border: 3px solid var(--secondary);
+  margin-bottom: 10px;
 }
+
 .slogan {
     font-style: italic;
     font-size: 1.2em;
