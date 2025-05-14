@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Rémi Misery, étudiant en science des données à la recherche d'une alternance.">
+    <title>Portfolio Rémi Misery</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/navbar.js" defer></script>
+
+<!-- Scroll Progress Bar -->
+<style>
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 5px;
+  background-color: var(--secondary);
+  z-index: 1001;
+}
+</style>
+<script>
+window.onscroll = function() {
+  const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrolled = (winScroll / height) * 100;
+  document.getElementById("progress-bar").style.width = scrolled + "%";
+};
+</script>
+
+<!-- Page Loader -->
+<style>
+#loader {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  z-index: 2000;
+}
+</style>
+<script>
+window.addEventListener("load", () => {
+  document.getElementById("loader").style.display = "none";
+});
+</script>
+
+<!-- Enhanced Dark/Light Mode -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.createElement('button');
+  toggle.textContent = '🌓 Mode Clair/Sombre';
+  toggle.className = 'button';
+  toggle.style.position = 'fixed';
+  toggle.style.bottom = '20px';
+  toggle.style.right = '20px';
+  toggle.style.zIndex = '1000';
+  document.body.appendChild(toggle);
+
+  if (localStorage.getItem("theme") === "light") {
+    
+  }
+
+  toggle.addEventListener("click", () => {
+    document.body.classList.toggle("light-mode");
+    // localStorage removed document.body.classList.contains("light-mode") ? "light" : "dark");
+  });
+});
+</script>
+
+</head>
+<body>
+<div id="loader">Chargement...</div>
+<div id="progress-bar"></div>
+    
+
+<main data-aos="fade-up">
+    <section style="text-align: center;" data-aos="fade-up">
+        <img src="assets/images/photo.jpg" alt="Photo de Rémi Misery" style="max-width:180px;border-radius:50%;margin-bottom:20px;border:3px solid var(--secondary);">
+        <h2 style="margin: 10px 0;">Rémi Misery</h2>
+        <p>Étudiant en science des données • Curieux, passionné & engagé</p>
+    </section>
+    <section class="landing-icons">
+        <h2>Explorez mon portfolio</h2>
+        <div class="icon-links">
+            <a href="pages/cv.html" class="icon-button">📄<span>CV</span></a>
+            <a href="pages/experience.html" class="icon-button">💼<span>Expériences</span></a>
+            <a href="pages/projets.html" class="icon-button">🧪<span>Projets</span></a>
+            <a href="pages/contact.html" class="icon-button">📬<span>Contact</span></a>
+            <a href="pages/apropos.html" class="icon-button">👤<span>À propos</span></a>
+        </div>
+    </section>
+</main>
+
+</body>
+</html>
