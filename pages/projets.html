@@ -28,24 +28,56 @@
 
     <section>
   <h3>🗃️ Base de données relationnelle (MySQL & Python)</h3>
-  <p>J’ai modélisé et implémenté une base de données pour gérer la <strong>récolte, le stockage et la vente de sel</strong> par une coopérative de sauniers sur l’île de Ré.</p>
-  <p>J’ai commencé par concevoir un <strong>MCD (Modèle Conceptuel de Données)</strong> sous Looping, selon la méthode Merise, puis généré un <strong>MLD</strong> en intégrant les <strong>clés primaires/étrangères</strong> et des <strong>contraintes d’intégrité référentielle</strong>.</p>
-  <p>L’implémentation s’est faite avec <strong>EasyPHP Devserver 17</strong>, le <strong>MySQL Connector</strong>, et l’environnement <strong>Looping</strong>, pour ensuite interagir avec la base localement via <strong>phpMyAdmin</strong>.</p>
-  <p><strong>Python a été utilisé pour automatiser le traitement des données</strong> :</p>
+  <p>Dans le cadre d’un projet de gestion de données pour une <strong>coopérative de sel marin</strong> fictive basée sur l’île de Ré, j’ai conçu une solution complète allant de la modélisation des données jusqu’au développement d’une interface graphique utilisateur.</p>
+
+  <h4>📌 Objectif du projet</h4>
+  <p>Permettre à une coopérative de gérer les apports en sel effectués par les sauniers, les opérations de transformation, les ventes aux clients, ainsi que la tarification annuelle. L’idée était de simuler un système d’information réaliste à partir de données brutes en CSV.</p>
+
+  <h4>📐 Modélisation de la base de données</h4>
   <ul>
-    <li>📄 Lecture de fichiers CSV de récoltes/ventes de sel</li>
-    <li>⚙️ Insertion automatique dans la base de données via un script (<code>selmarin.py</code>)</li>
-    <li>🖥️ Création d’une interface graphique <strong>Tkinter</strong> (menu, affichage des tables, exécution de requêtes SQL)</li>
+    <li>Réalisation du <strong>MCD</strong> sous <strong>Looping</strong> avec la méthode Merise, en tenant compte des contraintes fonctionnelles (produits, clients, sauniers, entrées, sorties...)</li>
+    <li>Traduction en <strong>MLD</strong> puis génération d’un script SQL de création</li>
+    <li>Ajout de <strong>clés primaires, étrangères</strong> et de <strong>contraintes d'intégrité</strong> pour garantir la cohérence des données</li>
+    <li>Utilisation de <strong>EasyPHP Devserver 17</strong> et <strong>phpMyAdmin</strong> pour tester et visualiser la structure</li>
   </ul>
-  <p>J’ai également rédigé des requêtes SQL avancées :</p>
+
+  <h4>⚙️ Automatisation avec Python</h4>
+  <p>Pour alimenter la base avec les fichiers CSV fournis (récoltes, ventes, produits, clients...), j’ai développé un script Python (<code>selmarin.py</code>) qui :</p>
   <ul>
-    <li>🔹 Jointures internes et externes pour relier sauniers, produits et clients</li>
-    <li>🔹 Filtres pour cibler des livraisons ou ventes selon des dates ou des produits</li>
-    <li>🔹 Fonctions d’agrégation pour analyser les stocks ou volumes vendus</li>
-    <li>🔹 Création de vues personnalisées pour simplifier les requêtes complexes</li>
-    <li>🔹 Utilisation de <code>GROUP BY</code>, <code>HAVING</code>, <code>DIFF</code>, <code>UPDATE</code>, <code>INSERT</code>, <code>DELETE</code> et création d’un utilisateur spécifique</li>
+    <li>Détecte automatiquement l'encodage de chaque fichier</li>
+    <li>Convertit les formats de date et nettoie les valeurs manquantes</li>
+    <li>Insère les données dans la base MySQL en s’assurant d’éviter les doublons</li>
+    <li>Adapte dynamiquement les colonnes pour respecter les contraintes SQL</li>
   </ul>
-  <p>💡 Ce projet complet m’a permis de me confronter à toutes les étapes d’une base de données professionnelle, de la modélisation à la visualisation, en passant par le scripting et l’automatisation. La combinaison de SQL et Python m’a permis de comprendre leur complémentarité dans un workflow de gestion de données.</p>
+
+  <h4>🖥️ Interface graphique utilisateur (Tkinter)</h4>
+  <p>J’ai également développé une interface complète avec Tkinter pour :</p>
+  <ul>
+    <li>📂 Créer la base et les tables</li>
+    <li>📥 Insérer les données automatiquement depuis les fichiers CSV</li>
+    <li>🔎 Exécuter des requêtes prédéfinies ou personnalisées</li>
+    <li>🧾 Exporter les résultats de requêtes en CSV</li>
+    <li>📋 Afficher dynamiquement le contenu des tables</li>
+  </ul>
+
+  <h4>🧠 Requêtes SQL avancées</h4>
+  <p>J’ai conçu et intégré 10 requêtes SQL complexes, comprenant :</p>
+  <ul>
+    <li><strong>Requêtes d’analyse</strong> avec <code>GROUP BY</code> et <code>HAVING</code></li>
+    <li><strong>Vues SQL</strong> comme <code>Plusgrosclient</code> pour synthétiser les ventes annuelles</li>
+    <li><strong>Manipulations de données</strong> : <code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code></li>
+    <li><strong>Création et gestion d’utilisateurs SQL</strong> avec des permissions spécifiques</li>
+  </ul>
+
+  <h4>📈 Export et historique</h4>
+  <ul>
+    <li>Export des résultats de requêtes personnalisées au format CSV directement depuis l’interface</li>
+    <li>Affichage d’un historique d’actions et de logs dans l’application</li>
+  </ul>
+
+  <h4>💡 Résultat et apprentissages</h4>
+  <p>Ce projet m’a permis de développer une vision globale de la gestion de données : de la structuration à l’automatisation. J’ai appris à combiner mes compétences en modélisation, en SQL et en Python pour livrer une application fonctionnelle, évolutive, et proche des besoins réels d’une organisation.</p>
+  <p><strong>✅ C’est à ce jour mon projet préféré</strong>, car il m’a permis de mobiliser de nombreuses compétences, de relever des défis techniques concrets, et de produire un résultat complet dont je suis très fier.</p>
 </section>
 
 
