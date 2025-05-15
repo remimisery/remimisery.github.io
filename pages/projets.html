@@ -27,19 +27,27 @@
     </section>
 
     <section>
-      <h3>🗃️ Base de données relationnelle (MySQL)</h3>
-      <p>J’ai modélisé et implémenté une base de données de <strong>réservation de salles</strong> dans un établissement, en partant de zéro.</p>
-      <p>J’ai commencé par réaliser un <strong>MCD (Modèle Conceptuel de Données)</strong> selon la méthode Merise, que j’ai ensuite transformé en <strong>MLD</strong>. J’y ai intégré des clés primaires/étrangères et des contraintes d’intégrité référentielle, afin d’assurer la cohérence des données.</p>
-      <p>L’implémentation s’est faite avec <strong>Looping</strong>, l’environnement <strong>EasyPHP Devserver 17</strong>, et le <strong>MySQL Connector</strong>, outils qui m’ont permis de créer la base et de la manipuler en local.</p>
-      <p>J’ai rédigé des requêtes SQL avancées :</p>
-      <ul>
-        <li>🔹 Jointures internes et externes pour croiser les données des différentes tables</li>
-        <li>🔹 Filtres pour sélectionner des réservations selon des critères précis (date, salle, utilisateur…)</li>
-        <li>🔹 Fonctions d’agrégation pour comptabiliser les réservations ou calculer des statistiques</li>
-        <li>🔹 Création de vues personnalisées pour simplifier la consultation des données par les utilisateurs</li>
-      </ul>
-      <p>💡 Ce projet m’a vraiment permis de me mettre dans la peau d’un développeur de base de données. J’ai compris l’importance de bien structurer ses tables dès le départ, de normaliser ses données, et surtout de produire des requêtes pertinentes pour extraire de la valeur. C’est un travail rigoureux mais extrêmement satisfaisant quand tout fonctionne correctement.</p>
-    </section>
+  <h3>🗃️ Base de données relationnelle (MySQL & Python)</h3>
+  <p>J’ai modélisé et implémenté une base de données pour gérer la <strong>récolte, le stockage et la vente de sel</strong> par une coopérative de sauniers sur l’île de Ré.</p>
+  <p>J’ai commencé par concevoir un <strong>MCD (Modèle Conceptuel de Données)</strong> sous Looping, selon la méthode Merise, puis généré un <strong>MLD</strong> en intégrant les <strong>clés primaires/étrangères</strong> et des <strong>contraintes d’intégrité référentielle</strong>.</p>
+  <p>L’implémentation s’est faite avec <strong>EasyPHP Devserver 17</strong>, le <strong>MySQL Connector</strong>, et l’environnement <strong>Looping</strong>, pour ensuite interagir avec la base localement via <strong>phpMyAdmin</strong>.</p>
+  <p><strong>Python a été utilisé pour automatiser le traitement des données</strong> :</p>
+  <ul>
+    <li>📄 Lecture de fichiers CSV de récoltes/ventes de sel</li>
+    <li>⚙️ Insertion automatique dans la base de données via un script (<code>selmarin.py</code>)</li>
+    <li>🖥️ Création d’une interface graphique <strong>Tkinter</strong> (menu, affichage des tables, exécution de requêtes SQL)</li>
+  </ul>
+  <p>J’ai également rédigé des requêtes SQL avancées :</p>
+  <ul>
+    <li>🔹 Jointures internes et externes pour relier sauniers, produits et clients</li>
+    <li>🔹 Filtres pour cibler des livraisons ou ventes selon des dates ou des produits</li>
+    <li>🔹 Fonctions d’agrégation pour analyser les stocks ou volumes vendus</li>
+    <li>🔹 Création de vues personnalisées pour simplifier les requêtes complexes</li>
+    <li>🔹 Utilisation de <code>GROUP BY</code>, <code>HAVING</code>, <code>DIFF</code>, <code>UPDATE</code>, <code>INSERT</code>, <code>DELETE</code> et création d’un utilisateur spécifique</li>
+  </ul>
+  <p>💡 Ce projet complet m’a permis de me confronter à toutes les étapes d’une base de données professionnelle, de la modélisation à la visualisation, en passant par le scripting et l’automatisation. La combinaison de SQL et Python m’a permis de comprendre leur complémentarité dans un workflow de gestion de données.</p>
+</section>
+
 
     <section>
       <h3>📉 Statistique descriptive avec R</h3>
