@@ -11,9 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
             <li><a href="${basePath}pages/cv.html" class="button">CV</a></li>
             <li><a href="${basePath}pages/projets.html" class="button">Projets</a></li>
             <li><a href="${basePath}pages/experience.html" class="button">Expérience</a></li>
-            <li><a href="${basePath}pages/contact.html" class="button">Contact</a></li>
             <li><a href="${basePath}pages/apropos.html" class="button">À propos</a></li>
-            <li><a href="${basePath}pages/bilan.html" class="button">Bilan</a></li> <!-- AJOUT ICI -->
+            <li><a href="${basePath}pages/bilan.html" class="button">Bilan</a></li> 
+            <li><a href="${basePath}pages/contact.html" class="button">Contact</a></li>
         </ul>
     </nav>
 </header>`;
