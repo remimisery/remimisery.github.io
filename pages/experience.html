@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Experiences professionnelles de Remi Misery — stage developpement, industrie, BTP, restauration.">
+  <title>Experiences — Remi Misery</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/main.js" defer></script>
+  <link rel="icon" type="image/png" href="../assets/images/photo.jpg">
+</head>
+<body>
+<div id="progress-bar"></div>
+
+<div class="page-wrap">
+
+  <section class="reveal">
+    <h2>Experiences professionnelles</h2>
+    <p>Un stage de developpement logiciel en environnement industriel et six experiences de terrain, dans des secteurs varies, qui m'ont apporte rigueur, polyvalence et une vraie capacite d'adaptation.</p>
+  </section>
+
+  <!-- STAGE TIKIMOB -->
+  <div class="card reveal">
+    <span class="tag">Stage en cours</span>
+    <div class="timeline-date">Avril – Aout 2025</div>
+    <h3>Tikimob (groupe e-commerce) — Developpeur full-stack / Concepteur d'un mini-ERP de production</h3>
+    <p>Tikimob est un groupe francais specialise dans la vente en ligne de mobilier sur mesure. Le groupe opere plus de 13 boutiques WooCommerce couvrant la France, l'Espagne, l'Allemagne et l'Italie, avec un atelier de production unique ou toutes les commandes convergent pour etre fabriquees.</p>
+    <p>Ma mission principale a consiste a concevoir et developper un outil de suivi de production sous forme de plugin WordPress, baptise "Suivi Commandes". Cet outil remplace un fichier Excel partage entre les differents postes de l'atelier et centralise les commandes de toutes les boutiques dans un tableau de bord de production unifie.</p>
+
+    <h4>Ce que j'ai construit</h4>
+    <ul>
+      <li>Un plugin WordPress complet (environ 307 Ko de code, 15 fichiers) avec une architecture API-first : back-end en PHP exposant une API REST, front-end en Vue.js fonctionnant comme une Single Page Application.</li>
+      <li>Un systeme d'import multi-sites capable d'agreger automatiquement les commandes des 13 boutiques du groupe via l'API REST WooCommerce, avec une strategie d'import batch degradee en trois niveaux pour gerer les timeouts.</li>
+      <li>Un workflow de production complet en six etapes (En attente, Usinage, Plaqueuse, Controle/Emballage, Expedition, Expedie) modelise sous forme de machine a etats, avec gestion de la non-conformite et retrogradation automatique.</li>
+      <li>Un systeme de roles granulaires (RBAC) avec huit profils utilisateurs, chacun n'accedant qu'aux donnees et aux actions qui le concernent.</li>
+      <li>Des vues filtrees par poste de travail, avec edition en ligne par double-clic, tri par anciennete (FIFO), badges de statut colores et extraction automatique des dimensions et surfaces depuis les noms de produits.</li>
+      <li>Une base de donnees MySQL structuree en six tables personnalisees, avec modelisation relationnelle, contraintes d'integrite et migrations automatisees.</li>
+    </ul>
+
+    <h4>Impact mesurable</h4>
+    <ul>
+      <li>Gain de productivite estime a environ 80 minutes par jour pour l'ensemble de l'atelier, grace a l'automatisation de la saisie, de la recherche, des calculs de surface et de l'import des commandes.</li>
+      <li>Import de 50 commandes multi-sites passe de 2 a 3 heures manuelles a 5 a 10 minutes automatisees.</li>
+      <li>Elimination des conflits d'acces concurrent qui bloquaient regulierement le travail avec le fichier Excel partage.</li>
+    </ul>
+
+    <h4>Defis techniques resolus</h4>
+    <ul>
+      <li>Resolution de bugs de donnees (colonnes manquantes, site d'origine incorrect, dates ecrasees lors des imports en lot).</li>
+      <li>Correction de problemes d'interface (conflits de z-index, evaluation truthy de la chaine "0" en JavaScript, bugs de nommage dans le systeme de permissions).</li>
+      <li>Mise en place d'un marqueur de version visible a l'ecran pour fiabiliser les deploiements et eviter les regressions liees au rechargement d'anciennes versions.</li>
+    </ul>
+
+    <p><strong>Competences developpees :</strong> developpement full-stack (PHP, Vue.js, SQL, API REST), ecosysteme WordPress/WooCommerce, modelisation metier (traduction de processus industriels en structures de donnees), resolution de problemes complexes, developpement iteratif avec tests terrain aupres des operateurs.</p>
+  </div>
+
+  <!-- DL ATLANTIQUE -->
+  <div class="card reveal">
+    <div class="timeline-date">Juillet – Aout 2024 et Juin – Aout 2025</div>
+    <h3>DL Atlantique, Perigny — Operateur en decoupe et percage</h3>
+    <p>Entreprise specialisee dans la fabrication de pieces metalliques sur mesure. Poste d'operateur sur machines-outils destinees a la decoupe et au percage, dans un environnement industriel exigeant en termes de precision et de cadence.</p>
+    <ul>
+      <li>Lecture et interpretation de plans techniques pour identifier les cotes, tolerances et dimensions a respecter sur chaque piece.</li>
+      <li>Reglage et utilisation de machines de decoupe (type CNC) : parametrage des vitesses, profondeurs de passe et positionnement des pieces.</li>
+      <li>Percage et usinage de pieces en serie, avec controle qualite systematique a chaque etape de production.</li>
+      <li>Entretien courant des equipements : nettoyage, verification des niveaux, signalement des anomalies au chef d'atelier.</li>
+      <li>Application rigoureuse des protocoles de securite et port permanent des EPI.</li>
+    </ul>
+    <p><strong>Competences developpees :</strong> precision, concentration sur la duree, lecture de plans, respect des normes de fabrication, endurance physique.</p>
+  </div>
+
+  <!-- RAVALEMENT -->
+  <div class="card reveal">
+    <div class="timeline-date">Juillet – Aout 2023</div>
+    <h3>Ravalement de France 17, Saint-Medard-d'Aunis — Assistant monteur d'echafaudages et enduiseur</h3>
+    <p>Chantiers de ravalement de facade en Charente-Maritime. Conditions exigeantes : travail en hauteur, meteo variable, contraintes de delais. Collaboration etroite avec des professionnels du BTP.</p>
+    <ul>
+      <li>Aide au montage et au demontage d'echafaudages tubulaires, dans le strict respect des normes de securite en vigueur.</li>
+      <li>Preparation des surfaces murales (decapage, nettoyage haute pression) et participation a l'application d'enduits exterieurs (gratte, lisse).</li>
+      <li>Gestion logistique du materiel : approvisionnement en mortier, rangement quotidien, nettoyage des zones de travail.</li>
+      <li>Suivi des consignes du chef de chantier pour assurer le respect du planning et la qualite des finitions.</li>
+    </ul>
+    <p><strong>Competences developpees :</strong> travail en equipe sous pression, endurance physique, respect des regles de securite, sens de l'organisation.</p>
+  </div>
+
+  <!-- BURGER KING -->
+  <div class="card reveal">
+    <div class="timeline-date">Aout 2022</div>
+    <h3>Burger King, La Rochelle — Cuisinier en restauration rapide</h3>
+    <p>Equipe dynamique en periode de forte affluence estivale. Poste exigeant en rapidite d'execution et en gestion du stress, ou chaque seconde compte pour maintenir la qualite du service.</p>
+    <ul>
+      <li>Preparation des ingredients et assemblage des commandes dans le strict respect des standards de l'enseigne et des fiches de fabrication.</li>
+      <li>Application rigoureuse des procedures d'hygiene alimentaire et des normes HACCP a chaque etape de la production.</li>
+      <li>Nettoyage regulier des surfaces, gestion des stocks en cuisine et signalement des ruptures d'approvisionnement.</li>
+      <li>Coordination avec les equipiers pour garantir un service fluide et rapide aux heures de pointe.</li>
+    </ul>
+    <p><strong>Competences developpees :</strong> gestion du stress, rapidite d'execution, discipline collective, respect des normes sanitaires.</p>
+  </div>
+
+  <!-- MANPOWER -->
+  <div class="card reveal">
+    <div class="timeline-date">Juillet 2022</div>
+    <h3>Manpower — Missions interimaires polyvalentes</h3>
+    <p>Plusieurs missions courtes et variees dans le BTP et la logistique. Adaptation rapide a de nouveaux environnements, de nouvelles equipes et de nouvelles consignes a chaque mission.</p>
+    <ul>
+      <li><strong>Couvreur :</strong> aide a la pose de tuiles, manutention de materiaux en hauteur, respect strict des regles de securite en toiture.</li>
+      <li><strong>Demolition :</strong> utilisation d'outils specialises (marteau-piqueur, burins), tri et evacuation des gravats.</li>
+      <li><strong>Livreur :</strong> chargement, transport et livraison de sacs de farine dans des boulangeries artisanales, gestion autonome des tournees.</li>
+    </ul>
+    <p><strong>Competences developpees :</strong> adaptabilite, polyvalence, integration rapide, autonomie.</p>
+  </div>
+
+  <!-- ADECCO -->
+  <div class="card reveal">
+    <div class="timeline-date">Juillet 2022</div>
+    <h3>Adecco — Eboueur saisonnier</h3>
+    <p>Collecte quotidienne des dechets menagers en zone touristique a forte frequentation estivale. Travail physique, tot le matin, exigeant ponctualite et endurance.</p>
+    <ul>
+      <li>Collecte en binome sur des circuits quotidiens, avec un volume accru par l'afflux touristique.</li>
+      <li>Levee et vidage des bacs roulants, manuellement ou a l'aide du dispositif mecanique du camion-benne.</li>
+      <li>Interaction courtoise avec les usagers dans un esprit de service public.</li>
+      <li>Respect strict des horaires et des consignes de circulation sur routes partagees.</li>
+    </ul>
+    <p><strong>Competences developpees :</strong> ponctualite, endurance physique, sens du service, travail en binome.</p>
+  </div>
+
+  <!-- ATES -->
+  <div class="card reveal">
+    <div class="timeline-date">Juillet 2021</div>
+    <h3>Ates Constructions — Ouvrier maconnerie et plaquiste</h3>
+    <p>Chantiers de construction et de renovation. Premiere experience professionnelle, apprentissage des bases du travail manuel et de la valeur du travail collectif.</p>
+    <ul>
+      <li>Montage de parpaings, realisation de coffrages simples et preparation des materiaux (mortier, beton, enduit).</li>
+      <li>Pose de plaques de platre (BA13), preparation des joints et application d'enduits de lissage.</li>
+      <li>Nettoyage du chantier, approvisionnement en materiaux, rangement du materiel.</li>
+      <li>Travail en binome ou en equipe sous la supervision du chef de chantier.</li>
+    </ul>
+    <p><strong>Competences developpees :</strong> rigueur manuelle, travail d'equipe, respect des consignes, initiation au BTP.</p>
+  </div>
+
+</div>
+
+<footer>
+  <p>&copy; 2025 Remi Misery. Tous droits reserves.</p>
+</footer>
+</body>
+</html>

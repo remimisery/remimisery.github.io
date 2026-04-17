@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projets realises par Remi Misery — mini-ERP, SQL, Python, R, Excel, gestion de projet.">
+  <title>Projets — Remi Misery</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/main.js" defer></script>
+  <link rel="icon" type="image/png" href="../assets/images/photo.jpg">
+</head>
+<body>
+<div id="progress-bar"></div>
+
+<div class="page-wrap">
+
+  <section class="reveal">
+    <h2>Projets realises</h2>
+    <p>Une selection de projets concrets couvrant l'ensemble du spectre data et developpement : du stage en entreprise aux projets academiques en passant par les projets d'ecoles d'ingenieurs.</p>
+  </section>
+
+  <!-- STAGE TIKIMOB -->
+  <div class="card reveal">
+    <span class="tag">Stage — Projet phare</span>
+    <h3>Mini-ERP de production "Suivi Commandes" — PHP, Vue.js, MySQL, API REST</h3>
+    <p>Conception et developpement complet d'un plugin WordPress remplacant un fichier Excel partage par un outil de gestion de production centralise pour un groupe e-commerce de 13 boutiques.</p>
+
+    <h4>Le probleme a resoudre</h4>
+    <p>Avant mon arrivee, le suivi de production reposait sur un fichier Excel partage sur le reseau local de l'atelier, avec tous les problemes que cela implique : acces concurrent impossible (un seul utilisateur a la fois), saisie manuelle de chaque commande depuis WooCommerce, aucune tracabilite des modifications, pas de controle d'acces, risque de perte de donnees, et couverture limitee a un seul site sur treize.</p>
+
+    <h4>La solution developpee</h4>
+    <p>J'ai concu une application web complete, structuree en architecture API-first. Le back-end PHP expose une API REST avec 10 routes principales (CRUD commandes, mise a jour par poste, avancement d'etat, webhooks). Le front-end Vue.js fonctionne comme une SPA reactive avec des vues dynamiques par poste de travail. La base de donnees MySQL est organisee en six tables personnalisees avec un modele relationnel rigoureux.</p>
+
+    <h4>Les fonctionnalites cles</h4>
+    <ul>
+      <li>Import automatique des commandes de 13 sites via l'API WooCommerce, avec un systeme de scan d'IDs puis import batch, et une strategie degradee en trois niveaux en cas de timeout.</li>
+      <li>Workflow de production en six etapes avec machine a etats, gestion de la non-conformite (retrogradation automatique au poste usinage) et avancement automatique.</li>
+      <li>Systeme RBAC avec huit roles et des permissions granulaires : chaque operateur ne voit que ce qui le concerne.</li>
+      <li>Extraction automatique des dimensions et surfaces des meubles par expressions regulieres, et calcul des indicateurs de production.</li>
+      <li>Edition en ligne par double-clic, tri FIFO par anciennete, badges de statut colores, marqueur de version pour le deploiement.</li>
+    </ul>
+
+    <h4>Resultats</h4>
+    <p>Gain de productivite d'environ 80 minutes par jour pour l'atelier. Import de 50 commandes multi-sites passe de plusieurs heures a moins de 10 minutes. 8 exigences du cahier des charges sur 9 realisees, la synchronisation bidirectionnelle etant en cours de developpement.</p>
+  </div>
+
+  <!-- BDD COOP SEL -->
+  <div class="card reveal">
+    <span class="tag">Projet academique</span>
+    <h3>Base de donnees relationnelle — MySQL et Python</h3>
+    <p>Conception d'une solution complete de gestion de donnees pour une cooperative de sel marin fictive basee sur l'ile de Re : modelisation relationnelle, alimentation automatisee depuis des fichiers CSV, interface graphique Tkinter et requetage SQL avance.</p>
+
+    <h4>Modelisation</h4>
+    <ul>
+      <li>MCD sous Looping (methode Merise), traduction en MLD, generation du script SQL de creation avec cles primaires, etrangeres et contraintes d'integrite.</li>
+      <li>Optimisation des requetes SQL complexes pour l'extraction d'indicateurs de performance (ventes annuelles, plus gros clients, analyse par produit).</li>
+    </ul>
+
+    <h4>Automatisation Python</h4>
+    <ul>
+      <li>Script de detection automatique d'encodage, conversion des formats de date, nettoyage des valeurs manquantes et insertion sans doublons dans MySQL.</li>
+    </ul>
+
+    <h4>Interface graphique</h4>
+    <ul>
+      <li>Application Tkinter complete : creation de la base, insertion automatique, execution de requetes predefinies ou personnalisees, export CSV, affichage dynamique des tables.</li>
+    </ul>
+
+    <p>Mon projet prefere de la formation : il m'a donne une vision globale de la gestion de donnees, de la conception a l'exploitation.</p>
+  </div>
+
+  <!-- REPORTING EXCEL -->
+  <div class="card reveal">
+    <span class="tag">Projet academique</span>
+    <h3>Creation d'un reporting — Excel et VBA</h3>
+    <p>Developpement d'un outil de gestion des notes sous Excel, avec automatisation de l'analyse des performances et generation d'un tableau de bord dynamique integrant des KPI de suivi.</p>
+    <ul>
+      <li>Conception d'un tableau de bord dynamique avec tableaux croises dynamiques, segments interactifs et graphiques actualises automatiquement.</li>
+      <li>Automatisation des traitements de donnees via des macros VBA avancees pour fiabiliser les resultats et eliminer les erreurs de saisie manuelle.</li>
+      <li>Mise en forme conditionnelle pour mettre en evidence les alertes et les indicateurs critiques.</li>
+    </ul>
+  </div>
+
+  <!-- GESTION FICHIERS PYTHON -->
+  <div class="card reveal">
+    <span class="tag">Projet academique</span>
+    <h3>Pipeline d'ingestion de donnees — Python</h3>
+    <p>Developpement de scripts Python pour automatiser la lecture, le parsing et le nettoyage de fichiers bruts heterogenes, puis structuration des donnees exportees pour faciliter leur integration en base de donnees ou leur analyse.</p>
+    <ul>
+      <li>Conception de scripts Pandas pour automatiser la lecture et le nettoyage de fichiers de formats et d'encodages differents.</li>
+      <li>Automatisation des flux de sortie : structuration des donnees exportees en formats exploitables.</li>
+    </ul>
+  </div>
+
+  <!-- ANALYSE DONNEES SPHINX -->
+  <div class="card reveal">
+    <span class="tag">Projet academique</span>
+    <h3>Gestion et analyse de donnees — Le Sphinx et Excel</h3>
+    <p>Realisation d'un tableau de bord et d'une synthese sur les habitudes sportives des etudiants, avec creation d'un organigramme et structuration des resultats d'enquete.</p>
+    <ul>
+      <li>Utilisation du logiciel Le Sphinx pour la conception de l'enquete, la collecte et l'analyse des reponses.</li>
+      <li>Structuration et visualisation des resultats dans un tableau de bord Excel clair et exploitable.</li>
+    </ul>
+  </div>
+
+  <!-- ANALYSE EXPLORATOIRE PYTHON -->
+  <div class="card reveal">
+    <span class="tag">Projet academique</span>
+    <h3>Analyse exploratoire de donnees — Python</h3>
+    <p>Initiation a l'analyse exploratoire a partir de jeux de donnees publics (accidents de la route, donnees meteorologiques). Maitrise du pipeline complet : import, nettoyage, transformation, visualisation et interpretation.</p>
+    <ul>
+      <li>Nettoyage avec Pandas : suppression des doublons, remplacement des valeurs manquantes, reformatage des colonnes.</li>
+      <li>Visualisation avec Matplotlib : diagrammes en barres, heatmaps de correlation, boites a moustaches, nuages de points.</li>
+    </ul>
+    <p>Competence C1 — Traiter des donnees a des fins decisionnelles.</p>
+  </div>
+
+  <!-- STATS R -->
+  <div class="card reveal">
+    <span class="tag">Projet academique</span>
+    <h3>Statistique descriptive — R / RStudio</h3>
+    <p>Mise en pratique des fondamentaux de la statistique descriptive a partir d'un jeu de donnees reel : boxplots, nuages de points, histogrammes, regressions, tests de correlation.</p>
+    <ul>
+      <li>Calculs de statistiques de position et de dispersion : moyenne, mediane, ecart-type, quartiles, coefficient de variation.</li>
+      <li>Regression lineaire simple avec interpretation des coefficients et du R-carre.</li>
+    </ul>
+    <p>Competence C2 — Analyser statistiquement les donnees.</p>
+  </div>
+
+  <!-- DASHBOARD RH -->
+  <div class="card reveal">
+    <span class="tag">Projet academique</span>
+    <h3>Dashboard RH — Excel</h3>
+    <p>Tableau de bord interactif pour le suivi d'indicateurs RH (absences, salaires, anciennete, turnover). Interface simple et puissante pour explorer les indicateurs cles, avec segments interactifs et mise en forme conditionnelle.</p>
+    <p>Competence C3 — Representer des donnees.</p>
+  </div>
+
+  <!-- PIX2 -->
+  <div class="card reveal">
+    <span class="tag">Projet ecole d'ingenieurs</span>
+    <h3>Projet d'Imagination et d'Exploration 2 (PIX2) — 10 mois</h3>
+    <p>Projet innovant realise a l'ESILV sur une duree de 10 mois. Coordination d'une equipe technique avec gestion du budget, du planning et des livrables. Conception et developpement d'une solution innovante avec soutenance devant un jury.</p>
+  </div>
+
+  <!-- PROJET JAVA -->
+  <div class="card reveal">
+    <span class="tag">Projet ecole d'ingenieurs</span>
+    <h3>Projet Java — 5 mois</h3>
+    <p>Conception de l'architecture logicielle (programmation orientee objet) et developpement des fonctionnalites back-end d'un jeu video en equipe, avec soutenance orale devant un jury.</p>
+  </div>
+
+  <!-- SCRUM / KANBAN -->
+  <div class="card reveal">
+    <span class="tag">Methodologie</span>
+    <h3>Gestion de projet agile — SCRUM et Kanban</h3>
+    <p>Experimentation des methodes agiles : roles Scrum (Scrum Master, Product Owner), modele de Tuckman, personas, user stories, product backlog, tableau Kanban, burndown chart, planning poker.</p>
+    <p>Competence C5 — Conduire un projet.</p>
+  </div>
+
+  <!-- BMC -->
+  <div class="card reveal">
+    <span class="tag">Strategie</span>
+    <h3>Business Model Canvas et connaissance de l'entreprise</h3>
+    <p>Comprehension du fonctionnement global d'une entreprise a travers le Business Model Canvas, la methode des 4P, l'etablissement d'un previsionnel financier et l'etude comparative des formes juridiques.</p>
+    <p>Competence C6 — S'integrer dans l'environnement professionnel.</p>
+  </div>
+
+</div>
+
+<footer>
+  <p>&copy; 2025 Remi Misery. Tous droits reserves.</p>
+</footer>
+</body>
+</html>
