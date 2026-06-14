@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projets de Rémi Misery — data science, machine learning, business intelligence, data engineering, SIG et développement logiciel.">
+  <title>Projets — Rémi Misery</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/main.js" defer></script>
+  <link rel="icon" type="image/png" href="../assets/images/photo.jpg">
+</head>
+<body>
+<div id="progress-bar"></div>
+
+<div class="page-wrap">
+
+  <section class="reveal projects-intro">
+    <h2>Projets réalisés</h2>
+    <p>Une sélection de projets concrets couvrant l'ensemble du spectre data : statistique et machine learning, business intelligence, data engineering, systèmes d'information géographique et développement logiciel. Plusieurs d'entre eux sont accompagnés d'un rapport détaillé téléchargeable.</p>
+  </section>
+
+  <!-- ===================== PROJET PHARE — STAGE ===================== -->
+  <article class="card reveal" style="border-color: rgba(245,197,24,.3);">
+    <span class="tag">Stage — Projet phare</span>
+    <h3>Mini-ERP de production « Suivi Commandes » — PHP, Vue.js, MySQL, API REST</h3>
+    <p>Conception et développement complet d'un plugin WordPress remplaçant un fichier Excel partagé par un outil de gestion de production centralisé, pour un groupe e-commerce de treize boutiques.</p>
+
+    <h4>Le problème à résoudre</h4>
+    <p>Le suivi de production reposait sur un fichier Excel partagé sur le réseau de l'atelier, avec toutes les limites que cela implique : accès concurrent impossible, saisie manuelle de chaque commande depuis WooCommerce, aucune traçabilité, pas de contrôle d'accès, risque de perte de données et couverture limitée à un seul site sur treize.</p>
+
+    <h4>La solution développée</h4>
+    <p>J'ai conçu une application web complète en architecture API-first. Le back-end PHP expose une API REST de dix routes principales (CRUD commandes, mise à jour par poste, avancement d'état, webhooks). Le front-end Vue.js fonctionne comme une SPA réactive avec des vues dynamiques par poste de travail. La base MySQL est structurée en six tables avec un modèle relationnel rigoureux.</p>
+
+    <h4>Fonctionnalités clés</h4>
+    <ul>
+      <li>Import automatique des commandes des treize sites via l'API WooCommerce, avec scan d'identifiants puis import par lots et stratégie dégradée en trois niveaux en cas de dépassement de délai.</li>
+      <li>Workflow de production en six étapes modélisé sous forme de machine à états, avec gestion de la non-conformité et avancement automatique.</li>
+      <li>Système de rôles (RBAC) à huit profils et permissions granulaires : chaque opérateur ne voit que ce qui le concerne.</li>
+      <li>Extraction automatique des dimensions et surfaces des meubles par expressions régulières, et calcul des indicateurs de production.</li>
+      <li>Édition en ligne par double-clic, tri FIFO par ancienneté, badges de statut colorés et marqueur de version pour fiabiliser les déploiements.</li>
+    </ul>
+
+    <h4>Résultats</h4>
+    <p>Gain de productivité estimé à environ 80 minutes par jour pour l'atelier. L'import de cinquante commandes multi-sites est passé de plusieurs heures à moins de dix minutes. Huit des neuf exigences du cahier des charges ont été livrées, la synchronisation bidirectionnelle restant en cours de développement.</p>
+  </article>
+
+  <!-- ===================== GRILLE DE PROJETS ===================== -->
+  <h3 class="cat-heading">Tous les projets <span class="cat-count">(filtrer par domaine)</span></h3>
+
+  <div class="filter-bar reveal" id="project-filters">
+    <button class="filter-btn active" data-filter="all">Tous</button>
+    <button class="filter-btn" data-filter="stat">Data Science &amp; Stat</button>
+    <button class="filter-btn" data-filter="bi">Business Intelligence</button>
+    <button class="filter-btn" data-filter="eng">Data Engineering</button>
+    <button class="filter-btn" data-filter="sig">SIG</button>
+    <button class="filter-btn" data-filter="dev">Développement</button>
+    <button class="filter-btn" data-filter="gov">Gouvernance &amp; Gestion</button>
+  </div>
+
+  <div class="project-grid" id="project-grid">
+      <article class="project-card reveal" data-cat="stat" style="--accent:#8b7cf6">
+        <div class="project-banner">
+          <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+          <span class="banner-pill">Machine Learning</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-title"><svg class="ttl-icon" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>Prédiction d'une variable quantitative</h3>
+          <p class="project-desc">Prédiction du diamètre de tumeurs par régression linéaire, en mesurant l'impact du traitement des données aberrantes sur la précision du modèle dans un contexte médical.</p>
+          <div class="skill-block">
+            <div class="skill-label">Compétences</div>
+            <div class="chips"><span class="chip">Machine Learning</span><span class="chip">Régression linéaire multiple</span><span class="chip">Nettoyage de données</span><span class="chip">Évaluation de modèles</span></div>
+          </div>
+          <div class="skill-block">
+            <div class="skill-label">Logiciels</div>
+            <div class="chips"><span class="chip-tool">Python</span></div>
+          </div>
+          <div class="complexity">
+            <div class="complexity-head"><span>Complexité</span><b>30 %</b></div>
+            <div class="complexity-track"><div class="complexity-fill low" data-pct="30"></div></div>
+          </div>
+        </div>
+        <div class="project-foot">
+          <span class="project-dur"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>10 h</span>
+          <a class="project-dl" href="../assets/docs/predi.pdf" download title="Télécharger le document du projet"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>PDF</a>
+        </div>
+      </article>
+      <article class="project-card reveal" data-cat="bi" style="--accent:#4f9dff">
+        <div class="project-banner">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          <span class="banner-pill">Data Warehouse</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-title"><svg class="ttl-icon" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>Intégration de données dans un Data Warehouse</h3>
+          <p class="project-desc">Conception d'un entrepôt de données complet à partir de sources disparates et impures, pour produire des analyses décisionnelles stratégiques via une chaîne professionnelle d'ETL et de visualisation.</p>
+          <div class="skill-block">
+            <div class="skill-label">Compétences</div>
+            <div class="chips"><span class="chip">Tableaux de bord BI</span><span class="chip">Schéma en étoile</span><span class="chip">Architecture ETL</span></div>
+          </div>
+          <div class="skill-block">
+            <div class="skill-label">Logiciels</div>
+            <div class="chips"><span class="chip-tool">Python</span><span class="chip-tool">Power BI</span><span class="chip-tool">Talend</span><span class="chip-tool">Oracle SQL</span></div>
+          </div>
+          <div class="complexity">
+            <div class="complexity-head"><span>Complexité</span><b>85 %</b></div>
+            <div class="complexity-track"><div class="complexity-fill high" data-pct="85"></div></div>
+          </div>
+        </div>
+        <div class="project-foot">
+          <span class="project-dur"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>50 h</span>
+          <a class="project-dl" href="../assets/docs/DWH.pdf" download title="Télécharger le document du projet"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>PDF</a>
+        </div>
+      </article>
+      <article class="project-card reveal" data-cat="sig" style="--accent:#2dd4bf">
+        <div class="project-banner">
+          <svg viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+          <span class="banner-pill">SIG & Géostatistique</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-title"><svg class="ttl-icon" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>Projet SIG — Implantation des McDonald's</h3>
+          <p class="project-desc">Étude géostatistique sous QGIS sur l'implantation et l'accessibilité ferroviaire des restaurants McDonald's en France, croisant données spatiales et réseaux de transport.</p>
+          <div class="skill-block">
+            <div class="skill-label">Compétences</div>
+            <div class="chips"><span class="chip">Analyse spatiale</span><span class="chip">Croisement de données géographiques</span><span class="chip">Cartographie thématique</span></div>
+          </div>
+          <div class="skill-block">
+            <div class="skill-label">Logiciels</div>
+            <div class="chips"><span class="chip-tool">QGIS</span></div>
+          </div>
+          <div class="complexity">
+            <div class="complexity-head"><span>Complexité</span><b>50 %</b></div>
+            <div class="complexity-track"><div class="complexity-fill med" data-pct="50"></div></div>
+          </div>
+        </div>
+        <div class="project-foot">
+          <span class="project-dur"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>50 h</span>
+          <span class="project-na">Document non disponible</span>
+        </div>
+      </article>
+      <article class="project-card reveal" data-cat="bi" style="--accent:#6f72f0">
+        <div class="project-banner">
+          <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          <span class="banner-pill">Application interactive</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-title"><svg class="ttl-icon" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>Reporting d'une analyse multivariée</h3>
+          <p class="project-desc">Développement d'une application web interactive sous R combinant visualisation et analyse multifactorielle, pour comparer et modéliser géographiquement la pauvreté dans les départements français.</p>
+          <div class="skill-block">
+            <div class="skill-label">Compétences</div>
+            <div class="chips"><span class="chip">Analyse multivariée</span><span class="chip">Dataviz</span><span class="chip">Applications interactives</span><span class="chip">Récupération de données</span></div>
+          </div>
+          <div class="skill-block">
+            <div class="skill-label">Logiciels</div>
+            <div class="chips"><span class="chip-tool">R</span><span class="chip-tool">R Shiny</span><span class="chip-tool">Excel</span></div>
+          </div>
+          <div class="complexity">
+            <div class="complexity-head"><span>Complexité</span><b>65 %</b></div>
+            <div class="complexity-track"><div class="complexity-fill med" data-pct="65"></div></div>
+          </div>
+        </div>
+        <div class="project-foot">
+          <span class="project-dur"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>30 h</span>
+          <span class="project-na">Document non disponible</span>
+        </div>
+      </article>
+      <article class="project-card reveal" data-cat="stat" style="--accent:#f5c518">
+        <div class="project-banner">
+          <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          <span class="banner-pill">Prévision</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-title"><svg class="ttl-icon" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>Prévisions sur les métaux précieux</h3>
+          <p class="project-desc">Modélisation prévisionnelle du cours de l'aluminium pour déterminer le moment optimal de positionnement d'une entreprise sur le marché.</p>
+          <div class="skill-block">
+            <div class="skill-label">Compétences</div>
+            <div class="chips"><span class="chip">Analyse</span><span class="chip">Statistique</span><span class="chip">Séries temporelles</span></div>
+          </div>
+          <div class="skill-block">
+            <div class="skill-label">Logiciels</div>
+            <div class="chips"><span class="chip-tool">Excel</span></div>
+          </div>
+          <div class="complexity">
+            <div class="complexity-head"><span>Complexité</span><b>25 %</b></div>
+            <div class="complexity-track"><div class="complexity-fill low" data-pct="25"></div></div>
+          </div>
+        </div>
+        <div class="project-foot">
+          <span class="project-dur"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>12 h</span>
+          <span class="project-na">Document non disponible</span>
+        </div>
+      </article>
+      <article class="project-card reveal" data-cat="gov" style="--accent:#9aa7b8">
+        <div class="project-banner">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span class="banner-pill">Conformité RGPD</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-title"><svg class="ttl-icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Mise en conformité RGPD</h3>
+          <p class="project-desc">Élaboration d'un plan d'action structuré pour assurer la mise en conformité RGPD du service Ressources Humaines d'une entreprise industrielle.</p>
+          <div class="skill-block">
+            <div class="skill-label">Compétences</div>
+            <div class="chips"><span class="chip">Audit de données</span><span class="chip">Principe de minimisation</span><span class="chip">Registres de traitement</span><span class="chip">Plans d'action</span></div>
+          </div>
+          <div class="skill-block">
+            <div class="skill-label">Logiciels</div>
+            <div class="chips"><span class="chip-tool">Bureautique</span></div>
+          </div>
+          <div class="complexity">
+            <div class="complexity-head"><span>Complexité</span><b>15 %</b></div>
+            <div class="complexity-track"><div class="complexity-fill low" data-pct="15"></div></div>
+          </div>
+        </div>
+        <div class="project-foot">
+          <span class="project-dur"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>5 h</span>
+          <a class="project-dl" href="../assets/docs/RGPD.pdf" download title="Télécharger le document du projet"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>PDF</a>
+        </div>
+      </article>
+      <article class="project-card reveal" data-cat="bi" style="--accent:#38bdf8">
+        <div class="project-banner">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span class="banner-pill">Stage — SDIS 79</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-title"><svg class="ttl-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Rapport BusinessObjects — SDIS 79</h3>
+          <p class="project-desc">Création d'un rapport BusinessObjects pour le SDIS 79 permettant de consulter la disponibilité des agents en fonction de leur centre de secours.</p>
+          <div class="skill-block">
+            <div class="skill-label">Compétences</div>
+            <div class="chips"><span class="chip">Création de requêtes</span><span class="chip">Création de dimensions</span><span class="chip">Mise en forme</span></div>
+          </div>
+          <div class="skill-block">
+            <div class="skill-label">Logiciels</div>
+            <div class="chips"><span class="chip-tool">SAP BusinessObjects</span></div>
+          </div>
+          <div class="complexity">
+            <div class="complexity-head"><span>Complexité</span><b>65 %</b></div>
+            <div class="complexity-track"><div class="complexity-fill med" data-pct="65"></div></div>
+          </div>
+        </div>
+        <div class="project-foot">
+          <span class="project-dur"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Stage</span>
+          <a class="project-dl" href="../assets/docs/stage_BO.pdf" download title="Télécharger le document du projet"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>PDF</a>
+        </div>
+      </article>
+      <article class="project-card reveal" data-cat="bi" style="--accent:#34d399">
+        <div class="project-banner">
+          <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          <span class="banner-pill">Stage — SDIS 79</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-title"><svg class="ttl-icon" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Tableau de bord Qlik Sense — SDIS 79</h3>
+          <p class="project-desc">Conception d'un monitoring d'intégration et de détection d'anomalies sous Qlik Sense, avec cartes de contrôle statistique pour la supervision des flux de données.</p>
+          <div class="skill-block">
+            <div class="skill-label">Compétences</div>
+            <div class="chips"><span class="chip">Création de requêtes</span><span class="chip">Création de KPI</span><span class="chip">Cartes de contrôle statistique</span></div>
+          </div>
+          <div class="skill-block">
+            <div class="skill-label">Logiciels</div>
+            <div class="chips"><span class="chip-tool">Qlik Sense</span></div>
+          </div>
+          <div class="complexity">
+            <div class="complexity-head"><span>Complexité</span><b>85 %</b></div>
+            <div class="complexity-track"><div class="complexity-fill high" data-pct="85"></div></div>
+          </div>
+        </div>
+        <div class="project-foot">
+          <span class="project-dur"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Stage</span>
+          <a class="project-dl" href="../assets/docs/stage_QS.pdf" download title="Télécharger le document du projet"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>PDF</a>
+        </div>
+      </article>
+      <article class="project-card reveal" data-cat="eng" style="--accent:#4f9dff">
+        <div class="project-banner">
+          <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+          <span class="banner-pill">Bases de données</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-title"><svg class="ttl-icon" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>Base de données relationnelle — Coopérative de sel</h3>
+          <p class="project-desc">Solution complète de gestion de données pour une coopérative de sel marin : modélisation relationnelle (Merise), alimentation automatisée depuis des CSV, interface Tkinter et requêtage SQL avancé. Mon projet préféré de la formation.</p>
+          <div class="skill-block">
+            <div class="skill-label">Compétences</div>
+            <div class="chips"><span class="chip">Modélisation MCD / MLD</span><span class="chip">Requêtage SQL avancé</span><span class="chip">Automatisation Python</span><span class="chip">Interface graphique</span></div>
+          </div>
+          <div class="skill-block">
+            <div class="skill-label">Logiciels</div>
+            <div class="chips"><span class="chip-tool">MySQL</span><span class="chip-tool">Python</span><span class="chip-tool">Tkinter</span><span class="chip-tool">Looping</span></div>
+          </div>
+          <div class="complexity">
+            <div class="complexity-head"><span>Complexité</span><b>60 %</b></div>
+            <div class="complexity-track"><div class="complexity-fill med" data-pct="60"></div></div>
+          </div>
+        </div>
+        <div class="project-foot">
+          <span class="project-dur"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>40 h</span>
+          <span class="project-na">Document non disponible</span>
+        </div>
+      </article>
+      <article class="project-card reveal" data-cat="eng" style="--accent:#4f9dff">
+        <div class="project-banner">
+          <svg viewBox="0 0 24 24"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+          <span class="banner-pill">Data Engineering</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-title"><svg class="ttl-icon" viewBox="0 0 24 24"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>Pipeline d'ingestion de données</h3>
+          <p class="project-desc">Scripts Python automatisant la lecture, le parsing et le nettoyage de fichiers bruts hétérogènes, puis structurant les données pour faciliter leur intégration en base ou leur analyse.</p>
+          <div class="skill-block">
+            <div class="skill-label">Compétences</div>
+            <div class="chips"><span class="chip">Nettoyage de données</span><span class="chip">Parsing multi-format</span><span class="chip">Automatisation des flux</span></div>
+          </div>
+          <div class="skill-block">
+            <div class="skill-label">Logiciels</div>
+            <div class="chips"><span class="chip-tool">Python</span><span class="chip-tool">Pandas</span></div>
+          </div>
+          <div class="complexity">
+            <div class="complexity-head"><span>Complexité</span><b>40 %</b></div>
+            <div class="complexity-track"><div class="complexity-fill med" data-pct="40"></div></div>
+          </div>
+        </div>
+        <div class="project-foot">
+          <span class="project-dur"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>20 h</span>
+          <span class="project-na">Document non disponible</span>
+        </div>
+      </article>
+      <article class="project-card reveal" data-cat="bi" style="--accent:#4ade80">
+        <div class="project-banner">
+          <svg viewBox="0 0 24 24"><path d="M9 3v18M3 9h18"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+          <span class="banner-pill">Reporting</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-title"><svg class="ttl-icon" viewBox="0 0 24 24"><path d="M9 3v18M3 9h18"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg>Reporting automatisé — Excel & VBA</h3>
+          <p class="project-desc">Outil de gestion des notes sous Excel automatisant l'analyse des performances et générant un tableau de bord dynamique avec indicateurs de suivi.</p>
+          <div class="skill-block">
+            <div class="skill-label">Compétences</div>
+            <div class="chips"><span class="chip">Tableaux croisés dynamiques</span><span class="chip">Macros VBA</span><span class="chip">Mise en forme conditionnelle</span></div>
+          </div>
+          <div class="skill-block">
+            <div class="skill-label">Logiciels</div>
+            <div class="chips"><span class="chip-tool">Excel</span><span class="chip-tool">VBA</span></div>
+          </div>
+          <div class="complexity">
+            <div class="complexity-head"><span>Complexité</span><b>35 %</b></div>
+            <div class="complexity-track"><div class="complexity-fill low" data-pct="35"></div></div>
+          </div>
+        </div>
+        <div class="project-foot">
+          <span class="project-dur"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>15 h</span>
+          <span class="project-na">Document non disponible</span>
+        </div>
+      </article>
+      <article class="project-card reveal" data-cat="bi" style="--accent:#4ade80">
+        <div class="project-banner">
+          <svg viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+          <span class="banner-pill">Enquête & Analyse</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-title"><svg class="ttl-icon" viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>Analyse d'enquête — Le Sphinx</h3>
+          <p class="project-desc">Conception d'une enquête sur les habitudes sportives des étudiants, de la collecte à la synthèse, avec restitution dans un tableau de bord Excel clair et exploitable.</p>
+          <div class="skill-block">
+            <div class="skill-label">Compétences</div>
+            <div class="chips"><span class="chip">Conception d'enquête</span><span class="chip">Analyse des résultats</span><span class="chip">Dataviz</span></div>
+          </div>
+          <div class="skill-block">
+            <div class="skill-label">Logiciels</div>
+            <div class="chips"><span class="chip-tool">Le Sphinx</span><span class="chip-tool">Excel</span></div>
+          </div>
+          <div class="complexity">
+            <div class="complexity-head"><span>Complexité</span><b>25 %</b></div>
+            <div class="complexity-track"><div class="complexity-fill low" data-pct="25"></div></div>
+          </div>
+        </div>
+        <div class="project-foot">
+          <span class="project-dur"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>10 h</span>
+          <span class="project-na">Document non disponible</span>
+        </div>
+      </article>
+      <article class="project-card reveal" data-cat="stat" style="--accent:#8b7cf6">
+        <div class="project-banner">
+          <svg viewBox="0 0 24 24"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
+          <span class="banner-pill">Analyse exploratoire</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-title"><svg class="ttl-icon" viewBox="0 0 24 24"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>Analyse exploratoire de données — Python</h3>
+          <p class="project-desc">Pipeline complet d'analyse exploratoire sur des jeux de données publics (accidents de la route, météo) : import, nettoyage, transformation, visualisation et interprétation.</p>
+          <div class="skill-block">
+            <div class="skill-label">Compétences</div>
+            <div class="chips"><span class="chip">Nettoyage de données</span><span class="chip">Visualisation</span><span class="chip">Interprétation</span></div>
+          </div>
+          <div class="skill-block">
+            <div class="skill-label">Logiciels</div>
+            <div class="chips"><span class="chip-tool">Python</span><span class="chip-tool">Pandas</span><span class="chip-tool">Matplotlib</span></div>
+          </div>
+          <div class="complexity">
+            <div class="complexity-head"><span>Complexité</span><b>35 %</b></div>
+            <div class="complexity-track"><div class="complexity-fill low" data-pct="35"></div></div>
+          </div>
+        </div>
+        <div class="project-foot">
+          <span class="project-dur"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>15 h</span>
+          <span class="project-na">Document non disponible</span>
+        </div>
+      </article>
+      <article class="project-card reveal" data-cat="stat" style="--accent:#6f72f0">
+        <div class="project-banner">
+          <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          <span class="banner-pill">Statistique</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-title"><svg class="ttl-icon" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>Statistique descriptive — R</h3>
+          <p class="project-desc">Mise en pratique des fondamentaux de la statistique descriptive sur un jeu de données réel : indicateurs de position et de dispersion, régression linéaire, tests de corrélation.</p>
+          <div class="skill-block">
+            <div class="skill-label">Compétences</div>
+            <div class="chips"><span class="chip">Statistique descriptive</span><span class="chip">Régression linéaire</span><span class="chip">Tests de corrélation</span></div>
+          </div>
+          <div class="skill-block">
+            <div class="skill-label">Logiciels</div>
+            <div class="chips"><span class="chip-tool">R</span><span class="chip-tool">RStudio</span></div>
+          </div>
+          <div class="complexity">
+            <div class="complexity-head"><span>Complexité</span><b>30 %</b></div>
+            <div class="complexity-track"><div class="complexity-fill low" data-pct="30"></div></div>
+          </div>
+        </div>
+        <div class="project-foot">
+          <span class="project-dur"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>12 h</span>
+          <span class="project-na">Document non disponible</span>
+        </div>
+      </article>
+      <article class="project-card reveal" data-cat="bi" style="--accent:#4ade80">
+        <div class="project-banner">
+          <svg viewBox="0 0 24 24"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
+          <span class="banner-pill">Tableau de bord</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-title"><svg class="ttl-icon" viewBox="0 0 24 24"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>Dashboard RH — Excel</h3>
+          <p class="project-desc">Tableau de bord interactif pour le suivi d'indicateurs RH (absences, salaires, ancienneté, turnover), avec segments interactifs et mise en forme conditionnelle.</p>
+          <div class="skill-block">
+            <div class="skill-label">Compétences</div>
+            <div class="chips"><span class="chip">Tableau de bord</span><span class="chip">Suivi de KPI</span><span class="chip">Segments interactifs</span></div>
+          </div>
+          <div class="skill-block">
+            <div class="skill-label">Logiciels</div>
+            <div class="chips"><span class="chip-tool">Excel</span></div>
+          </div>
+          <div class="complexity">
+            <div class="complexity-head"><span>Complexité</span><b>30 %</b></div>
+            <div class="complexity-track"><div class="complexity-fill low" data-pct="30"></div></div>
+          </div>
+        </div>
+        <div class="project-foot">
+          <span class="project-dur"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>12 h</span>
+          <span class="project-na">Document non disponible</span>
+        </div>
+      </article>
+      <article class="project-card reveal" data-cat="dev" style="--accent:#fbbf24">
+        <div class="project-banner">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span class="banner-pill">École d'ingénieurs</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-title"><svg class="ttl-icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Projet d'Imagination et d'Exploration (PIX2)</h3>
+          <p class="project-desc">Projet innovant mené sur dix mois à l'ESILV : coordination d'une équipe technique, gestion du budget, du planning et des livrables, jusqu'à la soutenance devant un jury.</p>
+          <div class="skill-block">
+            <div class="skill-label">Compétences</div>
+            <div class="chips"><span class="chip">Coordination d'équipe</span><span class="chip">Gestion de budget</span><span class="chip">Planning & livrables</span></div>
+          </div>
+          <div class="skill-block">
+            <div class="skill-label">Logiciels</div>
+            <div class="chips"><span class="chip-tool">Gestion de projet</span></div>
+          </div>
+          <div class="complexity">
+            <div class="complexity-head"><span>Complexité</span><b>70 %</b></div>
+            <div class="complexity-track"><div class="complexity-fill high" data-pct="70"></div></div>
+          </div>
+        </div>
+        <div class="project-foot">
+          <span class="project-dur"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>10 mois</span>
+          <span class="project-na">Document non disponible</span>
+        </div>
+      </article>
+      <article class="project-card reveal" data-cat="dev" style="--accent:#fbbf24">
+        <div class="project-banner">
+          <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          <span class="banner-pill">École d'ingénieurs</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-title"><svg class="ttl-icon" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Projet Java — Jeu vidéo</h3>
+          <p class="project-desc">Conception de l'architecture logicielle (programmation orientée objet) et développement des fonctionnalités back-end d'un jeu vidéo en équipe, avec soutenance orale.</p>
+          <div class="skill-block">
+            <div class="skill-label">Compétences</div>
+            <div class="chips"><span class="chip">Programmation orientée objet</span><span class="chip">Architecture logicielle</span><span class="chip">Développement back-end</span></div>
+          </div>
+          <div class="skill-block">
+            <div class="skill-label">Logiciels</div>
+            <div class="chips"><span class="chip-tool">Java</span></div>
+          </div>
+          <div class="complexity">
+            <div class="complexity-head"><span>Complexité</span><b>55 %</b></div>
+            <div class="complexity-track"><div class="complexity-fill med" data-pct="55"></div></div>
+          </div>
+        </div>
+        <div class="project-foot">
+          <span class="project-dur"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>5 mois</span>
+          <span class="project-na">Document non disponible</span>
+        </div>
+      </article>
+      <article class="project-card reveal" data-cat="gov" style="--accent:#fb7185">
+        <div class="project-banner">
+          <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          <span class="banner-pill">Méthodologie agile</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-title"><svg class="ttl-icon" viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Gestion de projet agile — SCRUM & Kanban</h3>
+          <p class="project-desc">Mise en pratique des méthodes agiles : rôles Scrum, modèle de Tuckman, personas, user stories, product backlog, tableau Kanban, burndown chart et planning poker.</p>
+          <div class="skill-block">
+            <div class="skill-label">Compétences</div>
+            <div class="chips"><span class="chip">Scrum</span><span class="chip">Kanban</span><span class="chip">User stories</span><span class="chip">Burndown chart</span></div>
+          </div>
+          <div class="skill-block">
+            <div class="skill-label">Logiciels</div>
+            <div class="chips"><span class="chip-tool">Méthodologie</span></div>
+          </div>
+          <div class="complexity">
+            <div class="complexity-head"><span>Complexité</span><b>30 %</b></div>
+            <div class="complexity-track"><div class="complexity-fill low" data-pct="30"></div></div>
+          </div>
+        </div>
+        <div class="project-foot">
+          <span class="project-dur"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Module</span>
+          <span class="project-na">Document non disponible</span>
+        </div>
+      </article>
+      <article class="project-card reveal" data-cat="gov" style="--accent:#fb7185">
+        <div class="project-banner">
+          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          <span class="banner-pill">Stratégie d'entreprise</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-title"><svg class="ttl-icon" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>Business Model Canvas</h3>
+          <p class="project-desc">Compréhension du fonctionnement global d'une entreprise via le Business Model Canvas, la méthode des 4P, l'établissement d'un prévisionnel financier et l'étude des formes juridiques.</p>
+          <div class="skill-block">
+            <div class="skill-label">Compétences</div>
+            <div class="chips"><span class="chip">Business Model Canvas</span><span class="chip">Méthode des 4P</span><span class="chip">Prévisionnel financier</span></div>
+          </div>
+          <div class="skill-block">
+            <div class="skill-label">Logiciels</div>
+            <div class="chips"><span class="chip-tool">Stratégie</span></div>
+          </div>
+          <div class="complexity">
+            <div class="complexity-head"><span>Complexité</span><b>20 %</b></div>
+            <div class="complexity-track"><div class="complexity-fill low" data-pct="20"></div></div>
+          </div>
+        </div>
+        <div class="project-foot">
+          <span class="project-dur"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Module</span>
+          <span class="project-na">Document non disponible</span>
+        </div>
+      </article>
+  </div>
+
+</div>
+
+<footer>
+  <p>&copy; 2025 Rémi Misery. Tous droits réservés.</p>
+</footer>
+</body>
+</html>
