@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Stage de fin de BUT de Rémi Misery chez Tikimob : conception et développement d'un mini-ERP de production sous WordPress (PHP, Vue.js, API REST) et portage d'un outil de conversion transport VBA vers PHP.">
+  <title>Stage Tikimob — Rémi Misery</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/main.js" defer></script>
+  <link rel="icon" type="image/png" href="../assets/images/photo.jpg">
+</head>
+<body>
+<div id="progress-bar"></div>
+
+<div class="page-wrap">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="stage-hero reveal">
+    <span class="kicker">Stage de fin de BUT · 2026</span>
+    <h1>Conception d'un mini-ERP de production sous WordPress</h1>
+    <p class="lead">De l'Excel partagé à l'outil de gestion industrielle : un projet mené de bout en bout pour Tikimob, fabricant français de mobilier en kit sur mesure — analyse du besoin, modélisation, développement full-stack, déploiement en production et dialogue continu avec les opérateurs de l'atelier.</p>
+    <div class="stage-meta">
+      <div><b>Entreprise</b> · Tikimob (groupe e-commerce)</div>
+      <div><b>Période</b> · 7 avril – 12 juin 2026</div>
+      <div><b>Rôle</b> · Développeur full-stack</div>
+      <div><b>Tuteur entreprise</b> · Fabien Benetreau</div>
+      <div><b>Tuteur pédagogique</b> · Éric Payet</div>
+    </div>
+  </section>
+
+  <!-- ===================== CHIFFRES CLÉS ===================== -->
+  <div class="stat-grid reveal-children">
+    <div class="stat"><div class="stat-num">~80 <small>min/j</small></div><div class="stat-label">de temps libéré par opérateur, soit près de 290 h/an</div></div>
+    <div class="stat"><div class="stat-num">13</div><div class="stat-label">boutiques WooCommerce agrégées dans un tableau unique</div></div>
+    <div class="stat"><div class="stat-num">~33 000</div><div class="stat-label">lignes de code, réparties en 18 fichiers</div></div>
+    <div class="stat"><div class="stat-num">60</div><div class="stat-label">routes d'API REST développées sur mesure</div></div>
+    <div class="stat"><div class="stat-num">18</div><div class="stat-label">tables de base de données modélisées</div></div>
+    <div class="stat"><div class="stat-num">2</div><div class="stat-label">missions complémentaires menées en parallèle</div></div>
+  </div>
+
+  <div class="text-center mt-40 reveal">
+    <a href="../assets/docs/Rapport_de_stage_Tikimob.pdf" download class="btn btn-primary">Télécharger le rapport de stage complet (PDF)</a>
+  </div>
+
+  <!-- ===================== L'ENTREPRISE ===================== -->
+  <div class="card reveal">
+    <h3>L'entreprise — Tikimob</h3>
+    <p>Tikimob est un fabricant français, fort de plus de trente ans d'expérience, spécialisé dans la conception et la vente en ligne de mobilier en kit sur mesure. Chaque meuble est conçu à la commande grâce à un configurateur 3D développé en interne — le client définit lui-même dimensions, agencement, coloris et finitions — puis fabriqué en France, dans un atelier unique, avant d'être emballé en kit et expédié.</p>
+    <p>L'originalité du groupe tient à son modèle industriel : toutes les commandes, qu'elles viennent du site français, espagnol, allemand ou italien, ou de l'une des marques spécialisées (vans, cuisines, mobilier carton, rénovation de placards…), convergent vers un même atelier. C'est précisément cette centralisation, doublée d'un atelier fortement automatisé, qui rend nécessaire un outil capable d'agréger des commandes hétérogènes venues de l'ensemble du groupe.</p>
+    <h4>Un atelier 4.0</h4>
+    <p>La production est concentrée dans une usine française largement automatisée, implantée à Périgny, près de La Rochelle, et bâtie en partenariat avec le fabricant de machines Biesse : magasin automatisé d'environ 1 800 panneaux, centre d'usinage 3 axes au millimètre, étiquetage à codes-barres pour la traçabilité, et machine de fabrication de cartons sur mesure. Un atelier piloté numériquement ne pouvait pas rester suivi, côté commandes, par un simple fichier Excel ressaisi à la main : c'est tout l'objet de mon stage.</p>
+  </div>
+
+  <!-- ===================== CONTEXTE & PROBLÈME ===================== -->
+  <div class="card reveal">
+    <h3>Le point de départ : un fichier Excel partagé</h3>
+    <p>À mon arrivée, le suivi de production reposait entièrement sur un fichier Excel partagé entre les postes de l'atelier, structuré en sept onglets. Un excellent point de départ, mais qui atteignait ses limites. Une grande partie de mon travail initial a consisté à approfondir chaque besoin en interrogeant tour à tour le bureau d'étude, le lancement et les opérateurs — faisant émerger des besoins absents du cahier des charges initial (circuits quincaillerie et cartons, acomptes, exports transporteurs, retours qualité…).</p>
+    <h4>Les limites identifiées</h4>
+    <ul>
+      <li>Édition impossible à plusieurs : une seule personne à la fois, d'où files d'attente et conflits de versions.</li>
+      <li>Saisie manuelle de chaque commande depuis WooCommerce — source d'erreurs et de perte de temps.</li>
+      <li>Aucune traçabilité (impossible de savoir qui avait modifié quoi, et quand) ni contrôle d'accès.</li>
+      <li>Données fragiles, aucune automatisation des calculs, et couverture limitée historiquement à un seul site.</li>
+    </ul>
+    <div class="callout"><p><strong>Le bénéfice central du projet :</strong> le passage de l'Excel au plugin représente un gain estimé d'environ <strong>80 minutes par jour et par opérateur</strong> sur les tâches de suivi, soit plus de 6 heures par semaine et près de <strong>290 heures par an</strong> de temps libéré pour les équipes.</p></div>
+  </div>
+
+  <!-- ===================== MISSION 1 ===================== -->
+  <div class="card reveal">
+    <div class="mission-block">
+      <span class="mission-tag">Mission 1 — principale</span>
+      <h3>Le mini-ERP « Suivi Commandes »</h3>
+      <p>Concevoir, développer et déployer un outil de suivi de production sous forme de plugin WordPress, qui agrège automatiquement les commandes de tous les sites du groupe, propose à chaque opérateur une vue adaptée à son poste, modélise le workflow de fabrication, garantit la traçabilité grâce à un système de rôles et synchronise les données dans les deux sens entre l'atelier et les boutiques en ligne.</p>
+    </div>
+
+    <h4>Architecture <span style="color:var(--muted);font-weight:400">— API-first</span></h4>
+    <p>Le plugin suit une architecture inspirée des applications web modernes (SPA, Single Page Application). Le serveur PHP ne renvoie pas des pages déjà construites : il expose une API REST que le navigateur interroge pour lire et écrire des données au format JSON. Côté navigateur, une application Vue.js consomme cette API et met à jour l'affichage sans jamais recharger toute la page. Cette séparation nette entre les données (l'API) et l'affichage (l'interface) rend l'expérience très fluide pour l'opérateur et rend le cœur métier réutilisable demain par un autre front-end, voire une application mobile.</p>
+
+    <h4>Pile technologique</h4>
+    <div class="spec-grid">
+      <div class="spec"><div class="spec-k">Front-end</div><div class="spec-v">Vue.js 3 (SPA) · Chart.js · CSS3 sur mesure</div></div>
+      <div class="spec"><div class="spec-k">Back-end</div><div class="spec-v">PHP 8 · API REST · hooks WooCommerce</div></div>
+      <div class="spec"><div class="spec-k">Plateforme</div><div class="spec-v">WordPress 6 · WooCommerce + HPOS</div></div>
+      <div class="spec"><div class="spec-k">Données</div><div class="spec-v">MySQL / MariaDB · 18 tables · Advanced Custom Fields</div></div>
+    </div>
+
+    <h4>Modèle de données</h4>
+    <p>Le plugin crée 18 tables personnalisées autour d'une table maîtresse <em>wp_sc_commandes</em>, entourée de tables satellites (un article par ligne avec sa surface, une ligne de suivi par poste, historique horodaté des états, file d'attente de synchronisation, archives…). Quelques choix structurants : la surface est stockée <em>par article</em> et non par commande (des meubles différents utilisent des panneaux d'épaisseurs différentes), et le statut commercial WooCommerce est volontairement séparé de l'état de production interne.</p>
+
+    <h4>Front-end : une vue par poste</h4>
+    <p>L'interface affiche un contenu différent selon le rôle connecté : chaque opérateur ne voit que les colonnes et actions qui le concernent, et un routage automatique l'amène sur sa vue dédiée dès la connexion (bureau d'étude, lancement, usinage, plaqueuse, contrôle/emballage, expédition, comptable…). Parmi les fonctionnalités d'interface : édition en ligne par double-clic, tri par ancienneté (logique FIFO de l'atelier), badges de statut colorés, et surlignage rouge des commandes dont la date de sortie d'usine est dépassée.</p>
+
+    <h4>Back-end : une API REST sur mesure</h4>
+    <p>Le back-end expose 60 routes couvrant la gestion des commandes, l'avancement d'état, la synchronisation, les statistiques et les exports. Le défi technique le plus marquant a été l'extraction automatique des dimensions des meubles à partir de noms de produits aux formats variés (« L=160 cm H=200 cm P=35 cm », « 70x35x15cm »…), résolue par expressions régulières avec repli d'un format sur l'autre. Un module dédié traduit par ailleurs les dizaines de libellés de statut propres à chaque site vers une poignée d'états internes communs, unifiant des boutiques hétérogènes derrière un même workflow.</p>
+
+    <h4>Import multi-sites et chemin retour</h4>
+    <p>L'un des apports majeurs est l'agrégation automatique des commandes des treize sites. L'import se fait en trois phases — scan léger des identifiants, import groupé par lots, puis enrichissement local — avec une <strong>stratégie dégradée à trois niveaux</strong> (complet, sans métadonnées, minimal) pour résister aux sites lents sans jamais perdre la totalité des données. Le <strong>chemin retour</strong> referme la boucle : les modifications faites dans l'atelier (DSU, notes, statut, version de plan validée) sont renvoyées vers le site d'origine, avec détection de conflit et file d'attente persistante qui retente les envois en erreur.</p>
+
+    <h4>Workflow de production — une machine à états</h4>
+    <p>Le cœur du plugin est une machine à états : une commande suit un chemin défini, sans pouvoir sauter d'étape ni revenir en arrière arbitrairement, à l'exception d'une boucle qualité.</p>
+    <div class="flow">
+      <span>En attente</span><i>→</i><span>Bureau d'étude</span><i>→</i><span>Lancement</span><i>→</i><span>Usinage</span><i>→</i><span>Plaqueuse</span><i>→</i><span>Contrôle</span><i>→</i><span>Emballage</span><i>→</i><span>Attente exp.</span><i>→</i><span>Expédié</span>
+    </div>
+    <p>Lorsque le contrôle signale une « pièce à refaire », la commande est automatiquement ramenée au poste de fabrication concerné, une alerte rouge de haute priorité est déclenchée et le signalement est tracé. Cette règle métier garantit qu'aucune pièce non conforme ne peut atteindre l'expédition sans avoir été retravaillée puis re-contrôlée.</p>
+
+    <h4>Modules avancés</h4>
+    <p>Au-delà du socle, le plugin s'est enrichi de nombreux modules nés de besoins de terrain : tableau de bord analytique (Chart.js), archivage automatique des commandes anciennes, actualisation quotidienne des sites distants, tickets SAV et retours atelier, gestion du paiement en plusieurs fois (acompte/solde), notifications internes et routes de diagnostic.</p>
+
+    <h4>Le système de rôles (RBAC)</h4>
+    <p>Le plugin implémente un contrôle d'accès basé sur les rôles, en s'appuyant sur le système natif de WordPress. Il compte une vingtaine de rôles — des administrateurs aux opérateurs mono-poste, en passant par des rôles combinés et un rôle comptable — chaque permission étant vérifiée côté serveur avant toute opération.</p>
+  </div>
+
+  <!-- ===================== MISSION 2 ===================== -->
+  <div class="card reveal">
+    <div class="mission-block">
+      <span class="mission-tag sec">Mission 2 — secondaire</span>
+      <h3>Outil de calcul et de conversion transport</h3>
+      <p>Reprendre un classeur Excel truffé de macros VBA (environ 3 750 lignes), en comprendre la logique métier, la documenter, puis la ré-implémenter en PHP pour l'intégrer directement au plugin — afin qu'à terme un opérateur n'ait plus besoin d'ouvrir Excel.</p>
+    </div>
+    <p>Cet outil partait d'un fichier brut exporté par le logiciel de conception et le transformait, bouton après bouton, en une série de fichiers exploitables : fichier d'usinage, fichiers transporteurs (EDI), feuille à imprimer pilotant la machine à cartons, étiquettes, bon de livraison. J'ai reconstitué puis porté en PHP trois briques métier essentielles :</p>
+    <ul>
+      <li><strong>Le référentiel des poids de panneaux</strong> — calcul du poids réel d'un panneau à partir de ses seules dimensions (surface × poids au m²).</li>
+      <li><strong>Le routage transporteur par département</strong> — table associant chaque département au bon code d'agence selon le transporteur retenu.</li>
+      <li><strong>Le regroupement des pièces (« calcul collision »)</strong> — séparation des grandes pièces, qui voyagent à part, et marriage des petites dans des colis cohérents, dans la limite d'un poids et de marges définis.</li>
+    </ul>
+    <p>La vraie difficulté n'était pas de réécrire le code, mais d'en extraire l'intention métier : le VBA mélange logique et manipulation de cellules (« copier la colonne C dans la colonne AB »). J'ai donc traduit chaque manipulation en fonctions claires, puis reproduit chaque étape du classeur sous forme d'une page d'administration où l'opérateur choisit une commande et lance l'export voulu en un clic — les données client étant désormais récupérées automatiquement depuis la base, sans ressaisie.</p>
+  </div>
+
+  <!-- ===================== DIFFICULTÉS ===================== -->
+  <div class="card reveal">
+    <h3>Difficultés rencontrées et solutions</h3>
+    <p>Les difficultés les plus formatrices n'ont pas été les bugs ponctuels, mais les problèmes de cohérence de données entre treize sites conçus indépendamment : mêmes informations nommées différemment, formats hétérogènes, champs parfois absents. Le cas le plus représentatif fut celui des statuts de commande, résolu par une table de correspondance complète construite en dialoguant avec les équipes, assortie d'un comportement par défaut prudent pour qu'une commande ne disparaisse jamais silencieusement.</p>
+    <ul>
+      <li><strong>Erreurs silencieuses en base</strong> — fiabilisées par des migrations automatiques qui vérifient et complètent la structure à chaque mise à jour, et par une journalisation systématique des opérations sensibles.</li>
+      <li><strong>Interface</strong> — en-tête « collant » interceptant les clics (réglé via <em>pointer-events</em>), chaîne « 0 » évaluée comme fausse en JavaScript (comparaison stricte), bouton de suppression invisible (uniformisation du format des permissions).</li>
+      <li><strong>Déploiement</strong> — rechargements d'anciennes versions, neutralisés par un marqueur de version affiché à l'écran.</li>
+    </ul>
+  </div>
+
+  <!-- ===================== RÉSULTATS ===================== -->
+  <div class="card reveal">
+    <h3>Résultats et perspectives</h3>
+    <p>Le plugin « Suivi Commandes » répond aujourd'hui à l'intégralité du cahier des charges, largement enrichi en cours de route. Centralisation multi-sites, workflow de production, système de rôles, synchronisation bidirectionnelle, tableau de bord analytique et exports industriels de la mission 2 sont développés, déployés et utilisés en production — avec, en prime, les tickets SAV, la gestion des paiements en plusieurs fois et l'archivage automatique, absents du périmètre initial.</p>
+    <p>Avant la fin du stage, j'ai rédigé un manuel de maintenance et de reprise complet (une quinzaine de pages) destiné à la personne qui reprendra le projet : arborescence du code, procédures de mise à jour, ajout d'un site ou d'un poste, dépannage, sauvegarde et procédures d'urgence. L'objectif était que le travail réalisé reste pérenne au-delà de mon passage.</p>
+    <div class="callout"><p>Au-delà du temps gagné, c'est la qualité des décisions qui s'améliore : un commercial dispose d'une vue consolidée, un opérateur usinage voit immédiatement les pièces à refaire, le bureau d'étude suit sans confusion les versions de plans.</p></div>
+  </div>
+
+  <!-- ===================== COMPÉTENCES ===================== -->
+  <div class="card reveal">
+    <h3>Compétences développées</h3>
+    <ul>
+      <li><strong>Développement full-stack</strong> — PHP, JavaScript / Vue.js, SQL, API REST, expressions régulières.</li>
+      <li><strong>Écosystème WordPress / WooCommerce</strong> — hooks, filtres, API REST, HPOS, rôles, plugin ACF.</li>
+      <li><strong>Reprise de l'existant</strong> — lecture et portage d'environ 3 750 lignes de VBA vers PHP.</li>
+      <li><strong>Modélisation métier</strong> — traduction de processus industriels en structures de données et machines à états.</li>
+      <li><strong>Résolution de problèmes</strong> — débogage de bugs complexes et d'imports silencieux.</li>
+      <li><strong>Optimisation des performances</strong> — requêtes par lot, court-circuit, stratégies dégradées, files d'attente.</li>
+      <li><strong>Méthodologie</strong> — développement itératif, tests terrain, versioning et déploiement maîtrisés.</li>
+    </ul>
+  </div>
+
+  <div class="text-center mt-40 reveal">
+    <a href="../assets/docs/Rapport_de_stage_Tikimob.pdf" download class="btn btn-primary">Rapport de stage complet (PDF)</a>
+    <a href="projets.html" class="btn btn-outline">Voir tous les projets</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>&copy; 2026 Rémi Misery. Tous droits réservés.</p>
+</footer>
+</body>
+</html>
